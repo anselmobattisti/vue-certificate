@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#app',
   data: {
     txtCerificates: '',
-    titleEvent: 'Roda de Conversa',
+    titleEvent: 'Roda de Conversa: Sem políticas públicas, somos todos refugiados',
     titleCertificate: 'Certificado de Amigo',
     dateCertificate: '11/03/2019',
     showCertificate: true,
