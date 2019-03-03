@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+      <div id="app">
+        <p id="editCertificates" class="no-print">
+          <a  href="#" v-show="showCertificate" @click='manage()'>Editar Certificados </a>
+        </p>
+
+        <div v-show='!showCertificate'>
+
+          <p>Um participante por linha nome, função, carga horária, exemplo: Maria da Silva, Ouvinte, 20</p>
+              <strong>Lista de Participantes</strong><br/>
+              <textarea cols="100" rows="15" v-model='txtCerificates'></textarea>
+          </p>
+
+          <input type="button" value="Gerar Certificados" @click="processCertificates()">
+        </div>
+
+        <div v-if='showCertificate' id="certificate"
+
+        v-for="(certificate, index) in certificates">
+
+          <div id="content">
+
+            <br><br>
+            <h1>Certificado</h1>
+            <p id='text'>
+              Certificamos que <strong>{{certificate.name}}</strong>, participou como <i>{{certificate.function}}</i> <br/>
+              da <strong>{{ titleEvent }}</strong>, promovida pelo grupo de extensão em Mediação e </br>
+              Diversidade Cultural MediaCult, do Departamento de <br/>
+              Ciência da Informação da Universidade Federal Fluminense, </br/>
+              realizado dia {{ dateCertificate }} com carga horária de {{ certificate.hours }} horas.
+            </p>
+
+            <img src="apoio.png">
+        </div>
+      </div>
+    <script src="index.js"></script>
+  </body>
+</html>
